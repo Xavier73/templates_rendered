@@ -4,6 +4,15 @@
     //definition de la variable angular
     var app = angular.module("app", ['mgcrea.ngStrap', 'ngTagsInput', 'angular.filter']);
 
+    app.filter('mbpsToInt',function() {
+        return function(input) {
+            if (input) {
+                input.replace('mbps', '');
+                return parseFloat(input);    
+            }
+        }
+    });
+
     app.filter('removeAccents',function() {
         return function(source) {
             var accent = [
